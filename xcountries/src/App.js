@@ -6,18 +6,12 @@ function App() {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
 
-  const fetchData = async () => {
+  const fetchData = () => {
     setLoader(true);
-    try {
-      const data = await fetch("https://restcountries.com/v3.1/all");
-      if (!data.ok) {
-        throw new Error(`HTTP error! Status: ${data.status}`);
-      }
-      const resJson = await data.json();
-      setData(resJson);
-    } catch (e) {
-      console.error("there is error",e);
-    }
+    fetch("https://restcountries.com/v3.1/all")
+    .then((response) => response.json())
+    .then((data) => setData(data))
+    .catch((error) => console.error("Error fetching data: ", error));
     setLoader(false);
   };
 
