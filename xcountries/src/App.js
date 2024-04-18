@@ -10,12 +10,13 @@ function App() {
     setLoader(true);
     try {
       const data = await fetch("https://restcountries.com/v3.1/all");
+      if (!data.ok) {
+        throw new Error(`HTTP error! Status: ${data.status}`);
+      }
       const resJson = await data.json();
       setData(resJson);
-      console.log(resJson);
     } catch (e) {
-      console.log(e);
-      setData([]);
+      console.error("there is error",e);
     }
     setLoader(false);
   };
@@ -38,7 +39,6 @@ function App() {
       ) : (
         <div className="card-container">
           {data.map((val) => {
-            console.log(val);
             return (
               <Card
                 key={val.cca3}
