@@ -5,11 +5,11 @@ const App = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [fullName, setFullName] = useState("");
-  const [classValue, setClassValue] = useState("hide");
+  const [showFullName, setShowFullName] = useState(false);
 
   const createFullName = (e) => {
     e.preventDefault();
-    setClassValue("show");
+    setShowFullName(true);
     setFullName("Full Name: " + firstName + " " + lastName);
   };
   return (
@@ -24,7 +24,7 @@ const App = () => {
           value={firstName}
           onChange={(e) => {
             if (e.target.value === "") {
-              setClassValue("hide");
+              setShowFullName(false);
               setFullName("");
             }
             setFirstName(e.target.value);
@@ -40,7 +40,7 @@ const App = () => {
           value={lastName}
           onChange={(e) => {
             if (e.target.value === "") {
-              setClassValue("hide");
+              setShowFullName(false);
               setFullName("");
             }
             setLastName(e.target.value);
@@ -50,7 +50,7 @@ const App = () => {
         <br />
         <button type="submit">Submit</button>
       </form>
-      <div className={classValue}>{fullName}</div>
+      {showFullName ? <div>{fullName}</div> : null}
     </>
   );
 };
