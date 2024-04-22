@@ -31,16 +31,16 @@ function App() {
   }
 
   return (
-    <>
+    <div id='main'>
       <h1>React Calculator</h1>
       <input type="text" value={inputValue} readOnly/>
-      {resultValue === ""? null: <div>{resultValue}</div>}
+      {resultValue === ""? null: <div id='result'>{resultValue}</div>}
       <div id="allButtons">
         {buttonValues.map((val) => {
           return <Button key={val} name={val} handler={handleClick}/>
         })}
       </div>
-    </>
+    </div>
   );
 }
 

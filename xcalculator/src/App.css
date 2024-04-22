@@ -1,6 +1,16 @@
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 #allButtons {
     display: flex;
-    width: 230px;
+    width: 185px;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+#result {
+    color: grey;
+    padding-top: 5px;
 }
