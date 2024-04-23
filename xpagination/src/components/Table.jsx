@@ -26,14 +26,14 @@ function Table({ totalData }) {
   return (
     <>
       <table className="table-container">
-        <tbody>
+        <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
           </tr>
-        </tbody>
+        </thead>
         <tbody>
           {data
             .filter(
