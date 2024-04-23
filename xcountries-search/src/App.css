@@ -3,17 +3,3 @@
   justify-content: center;
   font-weight: 600;
 }
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 10px;
-}
-#searchBar {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0px;
-}
-input {
-  width: 40vw;
-}
