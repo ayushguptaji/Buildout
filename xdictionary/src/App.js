@@ -28,9 +28,8 @@ function App() {
       <h1>Dictionary App</h1>
       <input type="text" placeholder='Search for a word...' value={search} onChange={(e) => setSearch(e.target.value)}/>
       <button type='button' name='Search' onClick={searchWord}>Search</button>
-      <h5>Definition:</h5>
-      <p>{definition}</p>
-      {showMessage? <p>Word not found in the dictionary.</p>: null}
+      <h5>Definition:</h5>      
+      {showMessage? <p>Word not found in the dictionary.</p>: <p>{definition}</p>}
     </>
   );
 }
