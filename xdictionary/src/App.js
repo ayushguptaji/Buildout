@@ -3,7 +3,7 @@ import './App.css';
 import data from './data';
 
 function App() {
-  const [definition, setDefinition] = useState("");
+  const [definition, setDefinition] = useState("Definition:");
   const [search, setSearch] = useState("");
   const [showMessage, setShowMessage] = useState(false);
 
@@ -11,12 +11,12 @@ function App() {
     let found = false;
     data.forEach((val) => {
       if(val.word.toLowerCase() === search.toLowerCase()) {
-        setDefinition(val.meaning);
+        setDefinition((prev) => prev+val.meaning);
         found = true;
       }
     })
     if(!found) {
-      setDefinition("");
+      setDefinition("Definition:");
       setShowMessage(true); 
     } else {
       setShowMessage(false);
@@ -28,8 +28,8 @@ function App() {
       <h1>Dictionary App</h1>
       <input type="text" placeholder='Search for a word...' value={search} onChange={(e) => setSearch(e.target.value)}/>
       <button type='button' name='Search' onClick={searchWord}>Search</button>
-      <p><strong>Definition:</strong>{definition}</p>
-      {showMessage? "Word not found in the dictionary.": null}
+      <p>{definition}</p>
+      {showMessage? <p>Word not found in the dictionary.</p>: null}
     </>
   );
 }
