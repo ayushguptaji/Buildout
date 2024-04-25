@@ -39,9 +39,9 @@ function App() {
             Search
           </button>
         </div>
-        {loader === 1 ? <p>Loading data…</p> : null}
+        {loader === 1 ? <p>Loading data...</p> : null}
         {loader === 2 ? (
-          <div className="allCards">
+          <div className="weather-cards">
             <Card data={data.current.temp_c} name="Temperature" unit="°C" />
             <Card data={data.current.humidity} name="Humidity" unit="%" />
             <Card data={data.current.condition.text} name="Condition" unit="" />
