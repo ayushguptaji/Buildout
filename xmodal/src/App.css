@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+button {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin: 10px;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #0056b3;
+  border-color: #004380;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9998; /* Ensure the overlay is behind the modal */
+}
+
+.modal {
+  background-color: white;
+  width: 40vw;
+  position: fixed;
+  top: 20vh;
+  left: 50%; /* Center the modal horizontally */
+  transform: translateX(-50%); /* Center the modal horizontally */
+  z-index: 9999; /* Ensure the modal is on top of the overlay */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label {
+  font-weight: 700;
 }
